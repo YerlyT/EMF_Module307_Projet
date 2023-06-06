@@ -11,7 +11,6 @@ body {
 
 .navigator {
   color: white;
-  position: fixed;
   display: flex;
   top:0;
 }
@@ -50,4 +49,16 @@ body {
   margin-top: 5em;
   margin-left: 15em;
   margin-right: 15em;
+}
+#lst{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.asteroide{
+  border: 1px solid #ddd;
+  margin-top: -1px; 
+  background-color: #514175;
+  padding: 12px;
+
 }

@@ -35,20 +35,15 @@ class HttpService {
 
   /*
   */
-  getAstero() {
+  getAstero(successCallBack) {
 	// Uploade votre propre fichier PHP et adaptez l'URL ci-dessous.
-  var settings = {
-    "url": "https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=THWLKdcvg1kZcPqb8BbDNDOjR7cnYNAKYYvjFdFh",
-    "method": "GET",
-    "timeout": 0,
-    "headers": {
-      "api_key": "THWLKdcvg1kZcPqb8BbDNDOjR7cnYNAKYYvjFdFh",
-      "Cookie": "JSESSIONID=5FFEFB61C7CEBA0B2442E3F7070BDBC8; __VCAP_ID__=0ec1d850-65b2-40d6-59a6-c111"
-    },
-  };
+  let url = "https://api.nasa.gov/neo/rest/v1/feed?api_key=THWLKdcvg1kZcPqb8BbDNDOjR7cnYNAKYYvjFdFh";
   
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
+  $.ajax(url, {
+    type: "GET",
+    contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+    success: successCallBack
+  }    
+  );
   }
 }
