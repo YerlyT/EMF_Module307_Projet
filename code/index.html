@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <!-- 
+   But :    
+   Auteur : prénom + nom
+   Date :   jj.mm.aaaa / V1.0 
+   -->
+  
+  <!-- entête de la page -->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/png" href="images/emf-info.png" />
+      <link rel= "stylesheet" href= "css/main.css" >
+      <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      <script type="text/javascript" src="js/indexCtrl.js"></script>
+      <script type="text/javascript" src="js/httpService.js"></script>
+      <script type="text/javascript" src="js/vueService.js"></script>
+      <script type="text/javascript" src="js/loginCtrl.js"></script>
+      <script type="text/javascript" src="js/compteCtrl.js"></script>
+      <script type="text/javascript" src="js/accueilCtrl.js"></script>
+      <title>Ex21 — login à distance</title>
+   </head>
+
+   <header>
+      <div id="accueil">
+         <nav class="navigator">
+           <div class="nav"><a onclick="indexCtrl.loadAccueil()">Accueil</a></div>
+           <div class="nav"><a  onclick="indexCtrl.loadAsteroides()">Asteroïdes</a></div>
+           <div class="nav"><a  onclick="indexCtrl.loadMeteo()">Météo</a></div>
+           <div class="nav"><a  onclick="indexCtrl.loadSources()">Sources</a></div>
+         </nav>
+       
+   </header>
+   <!-- corps de la page -->
+   <body >
+      <div id="container">
+          <!-- calque pour les differentes vues -->
+        <div id="view"></div>
+      </div>  <!-- fin du conteneur -->
+
+   </body>
+
+   <footer>
+
+   </footer>
+</html>

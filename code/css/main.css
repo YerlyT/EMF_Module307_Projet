@@ -1,0 +1,53 @@
+/*
+  But :     
+  Auteur : prénom + nom
+  Date :   jj.mm.aaaa / V1.0
+*/
+body {
+  background-color: #110e11;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigator {
+  color: white;
+  position: fixed;
+  display: flex;
+  top:0;
+}
+.nav{
+  padding: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav:hover{
+  background-color: #514175;
+}
+.title{
+  margin-top: 5em;
+  position: relative;
+  text-align: center;
+}
+.title .txtTitle{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#imgBack{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3%;
+  width: 60%;
+}
+
+#intro{
+  text-align: justify;
+  margin-top: 5em;
+  margin-left: 15em;
+  margin-right: 15em;
+}
