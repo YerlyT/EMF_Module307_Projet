@@ -137,3 +137,17 @@ body {
   background-color: #017A4F;
   color: #fff;
 }
+.ul{
+  display: inline;
+}
+.ul li a{
+  color : red
+}
+.asteroide2{
+  margin-top: -22px;
+  background-color: #514175;
+  padding: 12px;
+  display: flex;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}

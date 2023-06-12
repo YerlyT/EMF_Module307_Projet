@@ -44,33 +44,33 @@ class IndexCtrl {
 
   ctrlGetAstero() {
     http.getAstero((data) => {
-      let nom = "";
+      let infos = "";
       let date = this.getDateFormatted();
       const asteros = data.near_earth_objects[date];
      
         for (const astero in asteros) {
-          let dangereux = "oui";
+          let dangereux = "Oui";
 
           if (asteros[astero].is_potentially_hazardous_asteroid == false) {
-            dangereux = "non";
+            dangereux = "Non";
         }
 
-        nom +="<li class='asteroide'><p>" + asteros[astero].name +"</p><button class='arrow-button' onclick='indexCtrl.afficheCache()' >Voir plus<span class='arrow'></span></button>";
+        infos +="<li class='asteroide'><p>" + asteros[astero].name +"</p><button class='arrow-button' onclick='indexCtrl.afficheCache("+ astero +"); return false;' >Voir plus<span class='arrow'></span></button>";
 
-        nom+= "<br><ul class='ul'><li class='asteroide'>Potentiellement dangereux :" + dangereux + "</li>";
-        nom+= "<li class='asteroide'>Taille estimée :" + asteros[astero].estimated_diameter["meters"].estimated_diameter_max +"M </li>";
-        nom+= "<li class='asteroide'>Magnitude :" + asteros[astero].absolute_magnitude_h + "</li>";
-        nom+= "<li class='asteroide'>Nasa url :<a href=" + asteros[astero].nasa_jpl_url + ">" + asteros[astero].nasa_jpl_url + "</a></li></ul>";
+        infos+= "<li><ul class='ul' id='id"+ astero + "'><li class='asteroide2'>Potentiellement dangereux : " + dangereux + "</li>";
+        infos+= "<li class='asteroide2'>Taille estimée : " + asteros[astero].estimated_diameter["meters"].estimated_diameter_max +"M </li>";
+        infos+= "<li class='asteroide2'>Magnitude : " + asteros[astero].absolute_magnitude_h + "</li>";
+        infos+= "<li class='asteroide2'>Nasa url : <a href=" + asteros[astero].nasa_jpl_url + ">" + asteros[astero].nasa_jpl_url + "</a></li></ul></li></li>";
 
         
       }
-      $("#lst").append(nom);
+      $("#lst").append(infos);
       $(".ul").hide();
     });
   }
 
-  afficheCache(){
-    $(".ul").toggle();
+  afficheCache(nb){
+    $("#id"+nb).toggle();
   }
 
   getDateFormatted() {
