@@ -3,6 +3,7 @@
   Auteur : prénom + nom
   Date :   jj.mm.aaaa / V1.0
 */
+
 body {
   background-color: #110e11;
   color: white;
@@ -13,6 +14,11 @@ body {
   color: white;
   display: flex;
   top:0;
+  left:0;
+  position: fixed;
+  background-color: darkslateblue;
+  width: 100%;
+  z-index: 1;
 }
 .nav{
   padding: 25px;
@@ -26,23 +32,20 @@ body {
   background-color: #514175;
 }
 .title{
-  margin-top: 5em;
-  position: relative;
-  text-align: center;
-}
-.title .txtTitle{
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#imgBack{
-  display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 3%;
-  width: 60%;
+  margin-top: 100px;
+  background-image: url("../images/521477.jpg");
+  height: 600px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  text-align: center;
 }
+.txtTitle h1{
+  padding: 8em;
+}
+
 
 #intro{
   text-align: justify;
@@ -60,5 +63,77 @@ body {
   margin-top: -1px; 
   background-color: #514175;
   padding: 12px;
+  display: flex;
+}
+.asteroide p{
+  width: 90%;
+}
 
+#sources.li.a{
+  color: white;
+}
+
+#sources.li.a:hover{
+  color: #514175;
+}
+#mapid{
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 60vh;
+  margin-bottom: 5em;
+}
+.arrow-button {
+  display: flex;
+  color: #C2FFE9;
+  background-color: #00E692;
+  padding: 10px 16px;
+  border-radius: 20px;
+  transition: all .3s ease;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  font-size: 14px;
+}
+
+.arrow-button > .arrow {
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #C2FFE9;
+  border-bottom: 2px solid #C2FFE9;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 0 6px;
+  transition: all .3s ease;
+}
+
+.arrow-button > .arrow::before {
+  display: block;
+  background-color: currentColor;
+  width: 3px;
+  transform-origin: bottom right;
+  height: 2px;
+  position: absolute;
+  opacity: 0;
+  bottom: calc(-2px / 2);
+  transform: rotate(45deg);
+  transition: all .3s ease;
+  content: "";
+  right: 0;
+}
+
+.arrow-button:hover > .arrow {
+  transform: rotate(-45deg) translate(4px, 4px);
+  border-color: text-hover-color;
+}
+
+.arrow-button:hover > .arrow::before {
+  opacity: 1;
+  width: 8px;
+}
+
+.arrow-button:hover {
+  background-color: #017A4F;
+  color: #fff;
 }

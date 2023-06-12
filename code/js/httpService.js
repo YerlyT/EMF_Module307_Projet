@@ -37,7 +37,7 @@ class HttpService {
   */
   getAstero(successCallBack) {
 	// Uploade votre propre fichier PHP et adaptez l'URL ci-dessous.
-  let url = "https://api.nasa.gov/neo/rest/v1/feed?api_key=THWLKdcvg1kZcPqb8BbDNDOjR7cnYNAKYYvjFdFh";
+  let url = "https://api.nasa.gov/neo/rest/v1/feed?api_key=J8Phx815N1HFzWuNjFygvgY61lhAj3jPRqrRNabh";
   
   $.ajax(url, {
     type: "GET",
@@ -45,5 +45,14 @@ class HttpService {
     success: successCallBack
   }    
   );
+  }
+  getImgMars(successCallBack){
+    let url ="https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=J8Phx815N1HFzWuNjFygvgY61lhAj3jPRqrRNabh&page=1&per_page=5";
+
+    $.ajax(url,{
+      type: "GET",
+      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+      success: successCallBack
+    })
   }
 }

@@ -12,7 +12,10 @@ class VueService {
     $("#view").load("views/" + vue + ".html", function () {
 
       // si une fonction de callback est spécifiée, on l'appelle ici
-      if (typeof callback !== "undefined") {
+      if(vue == "map"){
+        this.mapElement = $("#carte");
+        map.initialiserCarte(this.mapElement);
+      } else if (typeof callback !== "undefined") {
         callback();
       }
 
