@@ -47,7 +47,11 @@ class IndexCtrl {
       const asteros = data.near_earth_objects[date];
       if (asteros.length > 0) {
         for (let i = 0; i < asteros.length; i++) {
-          retour += "<li class='asteroide'>Nom :" + asteros[i].name + " taille estimée : " + asteros[i].estimated_diameter["meters"].estimated_diameter_max + "M" + "</li>";
+          let dangereux = "oui";
+          if(asteros[i].is_potentially_hazardous_asteroid == false){
+            dangereux = "non";
+          }
+          retour += "<li class='asteroide'>Nom :" + asteros[i].name + " taille estimée : " + asteros[i].estimated_diameter["meters"].estimated_diameter_max + "M Potentiellement dangereux : "+ dangereux +"</li>";
         }
       }
 
