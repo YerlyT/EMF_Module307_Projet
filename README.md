@@ -1,3 +1,2 @@
 # EMF_Module307_Projet
-Projet du module 307, utilisant les APIs de la NASA pour montrer de informations sur l'espace
-Attention, la partie sur les astéroïdes peut prendre un peu de temps à charger
+Dans ce projet, j’ai voulu montrer l’espace. J’ai donc décider d’aller voir chez la Nasa s’ils avaient des Api sur l’espace disponibles. Et ils proposent des APIs sur l’espace en donnant des donnés en temps réel. Durant ce projet j’ai rencontré une ou deux difficultés, attention il se peut que des fois la page sur les astéroïdes mette du temps à charger.
