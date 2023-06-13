@@ -58,8 +58,8 @@ class IndexCtrl {
         infos +="<li class='asteroide'><p>" + asteros[astero].name +"</p><button class='arrow-button' onclick='indexCtrl.afficheCache("+ astero +"); return false;' >Voir plus<span class='arrow'></span></button>";
 
         infos+= "<li><ul class='ul' id='id"+ astero + "'><li class='asteroide2'>Potentiellement dangereux : " + dangereux + "</li>";
-        infos+= "<li class='asteroide2'>Taille estimée : " + asteros[astero].estimated_diameter["meters"].estimated_diameter_max +"M </li>";
-        infos+= "<li class='asteroide2'>Magnitude : " + asteros[astero].absolute_magnitude_h + "</li>";
+        infos+= "<li class='asteroide2'>Taille estimée : " + asteros[astero].estimated_diameter["meters"].estimated_diameter_max +" M </li>";
+        infos+= "<li class='asteroide2'>Magnitude : " + asteros[astero].absolute_magnitude_h + " ML</li>";
         infos+= "<li class='asteroide2'>Nasa url : <a href=" + asteros[astero].nasa_jpl_url + ">" + asteros[astero].nasa_jpl_url + "</a></li></ul></li></li>";
 
         
@@ -79,18 +79,19 @@ class IndexCtrl {
     // Récupération des composants de la date
     let year = date.getFullYear();
     let month = ("0" + (date.getMonth() + 1)).slice(-2); // Ajoute un zéro devant le mois si nécessaire
-    var day = ("0" + date.getDate()).slice(-2); // Ajoute un zéro devant le jour si nécessaire
+    let day = ("0" + date.getDate()).slice(-2); // Ajoute un zéro devant le jour si nécessaire
 
     return year + "-" + month + "-" + day;
   }
 
   ctrlgetImgMars() {
     http.getImgMars((data) => {
-      let retour = "";
+      let retour = "<div class='imgs'>";
         for (let i = 0; i < data["latest_photos"].length; i++) {
-          retour += "<img src='" + data["latest_photos"][i].img_src + "'/>";
-      }
-      $("#photos").append(retour);
+            retour += "<a href='"+ data["latest_photos"][i].img_src + "' ><img id='myImg' src='" + data["latest_photos"][i].img_src + "'/></a>";
+          } 
+          retour += "</div>";
+          $("#photos").append(retour);
     });
   }
 
