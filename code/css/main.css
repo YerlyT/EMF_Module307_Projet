@@ -1,10 +1,11 @@
 /*
-  But :     
-  Auteur : prénom + nom
-  Date :   jj.mm.aaaa / V1.0
+  But : Feuille de style du projet 
+  Auteur : Tom yerly
+  Date :   13.06.2023
 */
 
 body {
+  overflow-y: scroll;
   background-color: #110e11;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,14 +19,16 @@ body {
   position: fixed;
   background-color: darkslateblue;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 .nav{
-  padding: 25px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.nav > a{
+  padding: 25px;
 }
 
 .nav:hover{
@@ -162,7 +165,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   width:100%;
-  max-width:600px
+  max-width:1000px
 }
 
 #myImg:hover {opacity: 0.7;}
@@ -173,9 +176,48 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+#lienSources{
+  color: #00E692;
+}
+#lienSources:visited{
+  color: #017A4F;
+}
 
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
+/*
+  media queries
+*/
+@media only screen and (max-width: 930px){
+  body{
+    font-size: 11px;
+  }
+  .title{
+    margin-top: none;
+  }
+  .asteroide{
+    margin-left: -7em;
+    min-width: 300px;
+  }
+  .asteroide2{
+    margin-left: -7em;
+    min-width: 300px;
+  }
+  #mapid{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1{
+    padding-bottom: -15em;
+  }
+  .acceuil{
+    margin-bottom: -10em;
+  }
+  h2{
+    margin-left: -7em
+  }
+  #description{
+    margin-left: -10.5em;
+  }
+  .title{
+    height: 300px
   }
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <!-- 
-   But :    
-   Auteur : prénom + nom
-   Date :   jj.mm.aaaa / V1.0 
+   But :  SinglePage index
+   Auteur : Tom Yerly
+   Date :   13.06.2023 / V1.0 
    -->
   
   <!-- entête de la page -->
@@ -12,7 +12,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/png" href="images/logo.png" />
       <link rel= "stylesheet" href= "css/main.css" >
+      <!--imports pour qjuery-->
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+      <!--imports pour la carte-->
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
       <script type="text/javascript" src="js/indexCtrl.js"></script>
@@ -34,14 +36,14 @@
            <div class="nav"><a onclick="indexCtrl.loadMap()">Map</a></div>
            <div class="nav"><a onclick="indexCtrl.loadSources()">Sources</a></div>
          </nav>
-       
+      </div>
    </header>
    <!-- corps de la page -->
    <body >
       <div id="container">
          <div class="title">
             <div class="imgTitle"></div>
-            <div class="txtTitle"><h1>Explorez notre galaxie</h1></div>    
+            <div class="txtTitle"><h1>Projet : AEROSPACE</h1></div>    
           </div>
           <!-- calque pour les differentes vues -->
         <div id="view"></div>
